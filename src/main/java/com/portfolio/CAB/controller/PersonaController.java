@@ -24,6 +24,7 @@ public class PersonaController {
     
     @GetMapping ("/usuario/mostrar")
     @ResponseBody
+    
     public List<Persona> getPersona(){
         return persoServ.getPersona();
     }
@@ -61,7 +62,7 @@ public class PersonaController {
     
     @GetMapping ("/usuario/mostrar/perfil")
     public Persona findPersona(){
-        return persoServ.findPersona((long)1);
+        return persoServ.findPersona((long)3);
     }
     
 }

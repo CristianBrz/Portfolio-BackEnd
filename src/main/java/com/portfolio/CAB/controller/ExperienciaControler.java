@@ -57,7 +57,7 @@ public class ExperienciaControler {
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoExperiencia dtoExperiencia) {
         if (!experienciaService.existsById(id)) {
-            return new ResponseEntity(new Mensaje("El ID no exixte"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El ID no exixte"), HttpStatus.NOT_FOUND);
         }
 
         if (experienciaService.existsByNombreExp(dtoExperiencia.getNombreExp())
@@ -84,7 +84,7 @@ public class ExperienciaControler {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
         if (!experienciaService.existsById(id)) {
-            return new ResponseEntity(new Mensaje("El ID no exixte"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El ID no exixte"), HttpStatus.NOT_FOUND);
         }
 
         experienciaService.delete(id);

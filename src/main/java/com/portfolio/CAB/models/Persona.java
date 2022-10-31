@@ -31,7 +31,7 @@ public class Persona {
     private String titulo;
     
     @NotNull
-    @Size(min=1, max=200, message = "Introdicir entre 1 y 50 caracteres")
+    @Size(min=1, max=300, message = "Introdicir entre 1 y 50 caracteres")
     private String descripcion;
     
     //@NotNull
